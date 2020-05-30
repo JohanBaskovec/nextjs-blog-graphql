@@ -1,0 +1,55 @@
+type Article implements Node {
+  id: ID!
+  title: String!
+  content: String!
+}
+
+type ArticleConnection {
+  totalCount: Int!
+  edges: [ArticleEdge!]
+  pageInfo: PageInfo
+}
+
+type ArticleEdge {
+  cursor: String!
+  node: Article!
+}
+
+input CreateArticleInput {
+  title: String!
+  content: String!
+}
+
+type CreateArticlePayload implements MutationPayload {
+  code: String!
+  success: Boolean!
+  message: String!
+  article: Article
+}
+
+type Mutation {
+  createArticle(input: CreateArticleInput): CreateArticlePayload!
+}
+
+interface MutationPayload {
+  code: String!
+  success: Boolean!
+  message: String!
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  articles(first: Int, after: String): ArticleConnection!
+  node(id: ID!): Node
+}
+

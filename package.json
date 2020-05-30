@@ -5,11 +5,26 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "16.13.1",
+    "react-relay": "^9.1.0",
+    "redux": "^4.0.5",
+    "relay-runtime": "^9.1.0",
+    "sass": "^1.26.5"
+  },
+  "devDependencies": {
+    "babel-plugin-relay": "^9.1.0",
+    "get-graphql-schema": "^2.1.2",
+    "graphql": "^15.0.0",
+    "relay-compiler": "^9.1.0",
+    "relay-config": "^9.1.0"
   }
 }
