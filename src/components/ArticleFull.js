@@ -3,6 +3,7 @@ import Head from "next/head";
 import {graphql, QueryRenderer} from "react-relay";
 import environment from "../../relay_env";
 import Link from "next/link";
+import React from "react";
 
 export default function ArticleFull(props) {
   return (
@@ -14,7 +15,7 @@ export default function ArticleFull(props) {
         <QueryRenderer
           environment={environment}
           query={graphql`
-          query articleFullArticleQuery($id: ID!) {
+          query ArticleFullArticleQuery($id: ID!) {
             node(id: $id) {
               id,
               ... on Article {
@@ -35,6 +36,7 @@ export default function ArticleFull(props) {
             const article = props.node;
             return (<div>
               <h2>{article.title}</h2>
+              <Link href={`/article/${article.id}/edit`}><a>Edit</a></Link>
               <p>{article.content}</p>
             </div>);
           }}/>

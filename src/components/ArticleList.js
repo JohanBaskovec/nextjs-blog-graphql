@@ -18,7 +18,6 @@ export default createFragmentContainer(
             totalCount,
             edges {
                 node {
-                    id,
                     ...ArticleSummary_articleSummary
                 },
                 cursor

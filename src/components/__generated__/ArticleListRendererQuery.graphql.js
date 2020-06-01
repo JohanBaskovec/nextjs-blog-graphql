@@ -33,8 +33,8 @@ fragment ArticleList_articles on ArticleConnection {
   totalCount
   edges {
     node {
-      id
       ...ArticleSummary_articleSummary
+      id
     }
     cursor
   }
@@ -47,6 +47,7 @@ fragment ArticleList_articles on ArticleConnection {
 }
 
 fragment ArticleSummary_articleSummary on Article {
+  id
   title
   content
 }
@@ -198,7 +199,7 @@ const node/*: ConcreteRequest*/ = {
     "metadata": {},
     "name": "ArticleListRendererQuery",
     "operationKind": "query",
-    "text": "query ArticleListRendererQuery {\n  articles {\n    ...ArticleList_articles\n  }\n}\n\nfragment ArticleList_articles on ArticleConnection {\n  totalCount\n  edges {\n    node {\n      id\n      ...ArticleSummary_articleSummary\n    }\n    cursor\n  }\n  pageInfo {\n    endCursor\n    hasNextPage\n    hasPreviousPage\n    startCursor\n  }\n}\n\nfragment ArticleSummary_articleSummary on Article {\n  title\n  content\n}\n"
+    "text": "query ArticleListRendererQuery {\n  articles {\n    ...ArticleList_articles\n  }\n}\n\nfragment ArticleList_articles on ArticleConnection {\n  totalCount\n  edges {\n    node {\n      ...ArticleSummary_articleSummary\n      id\n    }\n    cursor\n  }\n  pageInfo {\n    endCursor\n    hasNextPage\n    hasPreviousPage\n    startCursor\n  }\n}\n\nfragment ArticleSummary_articleSummary on Article {\n  id\n  title\n  content\n}\n"
   }
 };
 // prettier-ignore

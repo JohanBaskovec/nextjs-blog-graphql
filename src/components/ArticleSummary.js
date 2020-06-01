@@ -12,7 +12,7 @@ function ArticleSummary(props) {
   return (
     <Row>
       <Col>
-        <Link href={`/article/${props.articleSummary.id}`}><a>{props.articleSummary.title}</a></Link>
+        <Link href={`/article/${props.articleSummary.id}`}><a>{props.articleSummary.id} {props.articleSummary.title}</a></Link>
         <div>
           {content}
         </div>
@@ -26,6 +26,7 @@ export default createFragmentContainer(
   {
     articleSummary: graphql`
         fragment ArticleSummary_articleSummary on Article {
+            id,
             title,
             content
         }

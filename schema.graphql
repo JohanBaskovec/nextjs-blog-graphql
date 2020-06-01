@@ -28,7 +28,8 @@ type CreateArticlePayload implements MutationPayload {
 }
 
 type Mutation {
-  createArticle(input: CreateArticleInput): CreateArticlePayload!
+  createArticle(input: CreateArticleInput!): CreateArticlePayload!
+  updateArticle(input: UpdateArticleInput!): UpdateArticlePayload!
 }
 
 interface MutationPayload {
@@ -51,5 +52,18 @@ type PageInfo {
 type Query {
   articles(first: Int, after: String): ArticleConnection!
   node(id: ID!): Node
+}
+
+input UpdateArticleInput {
+  id: String!
+  title: String!
+  content: String!
+}
+
+type UpdateArticlePayload implements MutationPayload {
+  code: String!
+  success: Boolean!
+  message: String!
+  article: Article
 }
 

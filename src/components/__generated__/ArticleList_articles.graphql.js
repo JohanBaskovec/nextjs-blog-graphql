@@ -16,8 +16,7 @@ export type ArticleList_articles = {|
   +totalCount: number,
   +edges: ?$ReadOnlyArray<{|
     +node: {|
-      +id: string,
-      +$fragmentRefs: ArticleSummary_articleSummary$ref,
+      +$fragmentRefs: ArticleSummary_articleSummary$ref
     |},
     +cursor: string,
   |}>,
@@ -67,13 +66,6 @@ const node/*: ReaderFragment*/ = {
           "name": "node",
           "plural": false,
           "selections": [
-            {
-              "alias": null,
-              "args": null,
-              "kind": "ScalarField",
-              "name": "id",
-              "storageKey": null
-            },
             {
               "args": null,
               "kind": "FragmentSpread",
@@ -135,6 +127,6 @@ const node/*: ReaderFragment*/ = {
   "type": "ArticleConnection"
 };
 // prettier-ignore
-(node/*: any*/).hash = '9cf855cfd87a2742c0f792dc3d8c4448';
+(node/*: any*/).hash = 'fcfcf791143522f4a755d1444691cc5a';
 
 module.exports = node;

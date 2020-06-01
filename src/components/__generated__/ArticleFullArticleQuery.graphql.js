@@ -8,25 +8,25 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-export type articleFullArticleQueryVariables = {|
+export type ArticleFullArticleQueryVariables = {|
   id: string
 |};
-export type articleFullArticleQueryResponse = {|
+export type ArticleFullArticleQueryResponse = {|
   +node: ?{|
     +id: string,
     +title?: string,
     +content?: string,
   |}
 |};
-export type articleFullArticleQuery = {|
-  variables: articleFullArticleQueryVariables,
-  response: articleFullArticleQueryResponse,
+export type ArticleFullArticleQuery = {|
+  variables: ArticleFullArticleQueryVariables,
+  response: ArticleFullArticleQueryResponse,
 |};
 */
 
 
 /*
-query articleFullArticleQuery(
+query ArticleFullArticleQuery(
   $id: ID!
 ) {
   node(id: $id) {
@@ -88,7 +88,7 @@ return {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Fragment",
     "metadata": null,
-    "name": "articleFullArticleQuery",
+    "name": "ArticleFullArticleQuery",
     "selections": [
       {
         "alias": null,
@@ -110,7 +110,7 @@ return {
   "operation": {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Operation",
-    "name": "articleFullArticleQuery",
+    "name": "ArticleFullArticleQuery",
     "selections": [
       {
         "alias": null,
@@ -137,13 +137,13 @@ return {
   "params": {
     "id": null,
     "metadata": {},
-    "name": "articleFullArticleQuery",
+    "name": "ArticleFullArticleQuery",
     "operationKind": "query",
-    "text": "query articleFullArticleQuery(\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    id\n    ... on Article {\n      title\n      content\n    }\n  }\n}\n"
+    "text": "query ArticleFullArticleQuery(\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    id\n    ... on Article {\n      title\n      content\n    }\n  }\n}\n"
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '5b78b29f5b625ce1cd6e84034bf5bf2a';
+(node/*: any*/).hash = '18074ce952f1b4f4514f4894f800dd53';
 
 module.exports = node;

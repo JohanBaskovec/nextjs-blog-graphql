@@ -1,5 +1,5 @@
 import {useRouter} from "next/router";
-import ArticleFull from "../../components/article-full";
+import ArticleFull from "../../components/ArticleFull.js";
 import React from "react";
 
 export default function Article(props) {
